@@ -1,5 +1,24 @@
 <?php
 
+
+$fname = array("Peter", "Ben", "Joe");
+$age = array("35", "37", "43");
+
+// Combining arrays to create an associative array
+$c = array_combine($fname, $age);
+
+// Printing the resulting associative array
+print_r($c);
+
+
+// Array
+// (
+//     [Peter] => 35
+//     [Ben] => 37
+//     [Joe] => 43
+// )
+
+
 // Certainly! Here are examples and explanations of explode(), implode(), json_encode(), json_decode(), and other commonly used functions in PHP development.
 
 // explode()
