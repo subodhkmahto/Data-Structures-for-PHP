@@ -48,6 +48,21 @@ $string = implode(",", $array);
 echo $string;
 // Output: apple,banana,cherry
 
+[
+    'attribute' => 'dependent_id',
+    'format' => 'html',
+    'value' => function ($data) {
+    // Assuming $data->dependent_id contains the IDs in a format like ["69", "70", "71"]
+    $dependentIds = json_decode($data->dependent_id);
+    $results = [];
+    foreach ($dependentIds as $dependentId) {
+    $results[] = EmployeeBill::resolveDependents($dependentId, $data->emp_id);
+    }
+    return implode(', ', $results); // Adjust the separator as needed
+    },
+]
+
+
 // json_encode()
 // Description: Returns the JSON representation of a value.
 
