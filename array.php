@@ -1,6 +1,12 @@
 <?php
 
 $arr = array("a" => 1, "b" => 2, "c" => 3);
+
+
+$arr_=array_key_first($arr);
+
+$arr_=array_key_last($arr);
+
 if (array_key_exists("b", $arr)) {
     echo "Key exists!";
 } else {
@@ -9,6 +15,7 @@ if (array_key_exists("b", $arr)) {
 
 
 $arr = array("apple", "banana", "cherry");
+
 if (in_array("banana", $arr)) {
     echo "Value exists!";
 } else {
@@ -58,8 +65,6 @@ print_r($result);
 // Output: Array ( [b] => 2 )
 
 
-
-
 #array_map()
 //Description: Applies a callback function to the elements of the given arrays.
 
@@ -100,6 +105,8 @@ function sum($carry, $item) {
 $numbers = [1, 2, 3, 4, 5];
 $total = array_reduce($numbers, "sum", 0);
 echo $total;
+
+
 // Output: 15
 
 #array_slice()

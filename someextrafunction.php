@@ -46,21 +46,24 @@ $array = ["apple", "banana", "cherry"];
 // Join array elements into a string with comma as separator
 $string = implode(",", $array);
 echo $string;
+
 // Output: apple,banana,cherry
 
-[
-    'attribute' => 'dependent_id',
-    'format' => 'html',
-    'value' => function ($data) {
-    // Assuming $data->dependent_id contains the IDs in a format like ["69", "70", "71"]
-    $dependentIds = json_decode($data->dependent_id);
-    $results = [];
-    foreach ($dependentIds as $dependentId) {
-    $results[] = EmployeeBill::resolveDependents($dependentId, $data->emp_id);
-    }
-    return implode(', ', $results); // Adjust the separator as needed
-    },
-]
+
+
+// [
+//     'attribute' => 'dependent_id',
+//     'format' => 'html',
+//     'value' => function ($data) {
+//     // Assuming $data->dependent_id contains the IDs in a format like ["69", "70", "71"]
+//     $dependentIds = json_decode($data->dependent_id);
+//     $results = [];
+//     foreach ($dependentIds as $dependentId) {
+//     $results[] = EmployeeBill::resolveDependents($dependentId, $data->emp_id);
+//     }
+//     return implode(', ', $results); // Adjust the separator as needed
+//     },
+// ]
 
 
 // json_encode()
@@ -207,6 +210,11 @@ $array = [
 
 // Get all values from the 'name' column
 $names = array_column($array, "name");
+$id=array_column($array,"id");
+
+print(json_encode($id));
+
 print_r($names);
 // Output: Array ( [0] => John [1] => Jane [2] => Doe )
+
 ?>
