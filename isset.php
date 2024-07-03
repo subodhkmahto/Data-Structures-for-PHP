@@ -18,20 +18,29 @@ if (isset($var2, $var3)) {
 } 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if form was submitted
-    if (isset($_POST['name']) && isset($_POST['email'])) {
-        // Retrieve form data
-        $name = $_POST['name'];
-        $email = $_POST['email'];
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Check if form was submitted
+//     if (isset($_POST['name']) && isset($_POST['email'])) {
+//         // Retrieve form data
+//         $name = $_POST['name'];
+//         $email = $_POST['email'];
 
-        // Display form data
-        echo "Name: " . htmlspecialchars($name) . "<br>";
-        echo "Email: " . htmlspecialchars($email);
-    } else {
-        echo "Form data is not set.";
-    }
-} else {
-    echo "Invalid request method.";
+//         // Display form data
+//         echo "Name: " . htmlspecialchars($name) . "<br>";
+//         echo "Email: " . htmlspecialchars($email);
+//     } else {
+//         echo "Form data is not set.";
+//     }
+// } else {
+//     echo "Invalid request method.";
+// }
+
+$charArray = array('a', 'b', 'c');
+
+// Print the elements of the array
+foreach ($charArray as $char) {
+    echo $char . "\n";
 }
+
+
 ?>
