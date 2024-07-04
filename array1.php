@@ -13,6 +13,7 @@ if (array_key_exists("b", $arr)) {
 } else {
     echo "Key does not exist.";
 }
+
 ?>
 <!-- in_array()
 Description: Checks if a value exists in an array.

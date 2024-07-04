@@ -1,5 +1,11 @@
 <?php
 
+
+$str = "Hello world. It's a beautiful day.";
+$arr = preg_split("/\s+/", $str);
+print_r($arr);
+
+
 $str = "Hello! This is a test string 123.";
 
 // Remove non-alphanumeric characters
@@ -14,7 +20,7 @@ $new_str = preg_replace('/\s+/', ' ', $str);
 
 echo $new_str; // Output: This sentence has multiple spaces.
 
-
+?>
 
 
 
@@ -72,11 +78,9 @@ $new_str = preg_replace('/\bhttps?:\/\/\S+/', '<a href="$0">$0</a>', $str);
 
 echo $new_str; // Output: Visit our website at <a href="https://example.com">https://example.com</a> and learn more.
 
-?>
-Example 6: Masking Credit Card Numbers
-php
-Copy code
-<?php
+
+// <!-- Example 6: Masking Credit Card Numbers -->
+
 
 $str = "Your credit card number is 1234-5678-9012-3456.";
 
@@ -85,11 +89,9 @@ $new_str = preg_replace('/\b(\d{4}-){3}\d{4}\b/', '****-****-****-****', $str);
 
 echo $new_str; // Output: Your credit card number is ****-****-****-****.
 
-?>
-Example 7: Extracting Numbers from String
-php
-Copy code
-<?php
+
+//Example 7: Extracting Numbers from String
+
 
 $str = "The price of the product is $99.99.";
 
@@ -99,11 +101,7 @@ $numbers = implode(', ', $matches[0]);
 
 echo "Numbers found: " . $numbers; // Output: Numbers found: 99.99
 
-?>
-Example 8: Converting Markdown-style Links to HTML
-php
-Copy code
-<?php
+//Example 8: Converting Markdown-style Links to HTML
 
 $str = "Read [PHP Manual](https://www.php.net/manual/en/) for more information.";
 
@@ -112,11 +110,9 @@ $new_str = preg_replace('/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/', '<a href="$2">$
 
 echo $new_str; // Output: Read <a href="https://www.php.net/manual/en/">PHP Manual</a> for more information.
 
-?>
-Example 9: Removing Leading Zeros from IP Addresses
-php
-Copy code
-<?php
+
+// Example 9: Removing Leading Zeros from IP Addresses
+
 
 $ip = "192.168.001.001";
 
@@ -125,11 +121,9 @@ $new_ip = preg_replace('/(\b\d{1,3})\.0+(\d{1,3}\b)/', '$1.$2', $ip);
 
 echo $new_ip; // Output: 192.168.1.1
 
-?>
-Example 10: Uppercasing First Letters of Words
-php
-Copy code
-<?php
+
+//Example 10: Uppercasing First Letters of Words
+
 
 $str = "capitalize each word in this sentence.";
 

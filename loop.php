@@ -1,9 +1,11 @@
 <?php
+
 for ($i = 0; $i < 5; $i++) {
     echo "The number is: $i <br>";
 }
 
 $i = 1;
+
 while ($i <= 5) {
     echo "The number is: $i <br>";
     $i++;
@@ -15,7 +17,9 @@ do {
     $i++;
 } while ($i <= 5);
 
+
 $colors = array("Red", "Green", "Blue");
+
 foreach ($colors as $color) {
     echo "$color <br>";
 }
@@ -33,4 +37,5 @@ foreach ($matrix as $row) {
     }
     echo "<br>";
 }
+
 ?>

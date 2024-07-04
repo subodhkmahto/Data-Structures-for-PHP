@@ -1,7 +1,36 @@
 <?php
 
-$arr = array("a" => 1, "b" => 2, "c" => 3);
+$array1 = [
+    'a' => 'apple',
+    'b' => 'banana',
+    'c' => 'cherry',
+    'd' => 'date'
+];
 
+$array2 = [
+    'a' => 'apricot',
+    'b' => 'blueberry',
+    'e' => 'elderberry'
+];
+
+$array3 = [
+    'a' => 'avocado',
+    'd' => 'dragonfruit'
+];
+
+// Find keys in $array1 that are not present in $array2 and $array3
+$result = array_diff_key($array1, $array2, $array3);
+
+print_r($result);
+
+
+
+
+$arr = array("a" => 1, "b" => 2, "c" => 3);
+$out=[];
+foreach ($arr as $key => $data) {
+    $out[] = ['id' => $key, 'name' => $data];
+}
 
 $arr_=array_key_first($arr);
 
@@ -23,6 +52,7 @@ if (in_array("banana", $arr)) {
 }
 
 $arr = array("apple", "banana", "cherry"); 
+
 $key = array_search("banana", $arr);
 
  if ($key !== false) { 
