@@ -1,144 +1,67 @@
 <?php
 
-
+// Example 1: Splitting a string by whitespace
 $str = "Hello world. It's a beautiful day.";
-$arr = preg_split("/\s+/", $str);
-print_r($arr);
+$arr = preg_split("/\s+/", $str); // Splits the string by one or more whitespace characters
+print_r($arr); // Output: Array ( [0] => Hello [1] => world. [2] => It's [3] => a [4] => beautiful [5] => day. )
 
-
-$str = "Hello! This is a test string 123.";
-
-// Remove non-alphanumeric characters
-$new_str = preg_replace('/[^a-zA-Z0-9\s]/', '', $str);
-
+// Example 2: Removing non-alphanumeric characters
+$str = "Hello! This$ is a test string 123.";
+$new_str = preg_replace('/[^a-zA-Z0-9\s]/', '', $str); // Removes all characters that are not letters, digits, or whitespace
 echo $new_str; // Output: Hello This is a test string 123
 
+// Example 3: Replacing multiple spaces with a single space
 $str = "This     sentence    has   multiple    spaces.";
+$new_str = preg_replace('/\s+/', ' ', $str); // Replaces one or more whitespace characters with a single space
+echo $new_str; // Output: This sentence has multiple spaces
 
-// Replace multiple spaces with a single space
-$new_str = preg_replace('/\s+/', ' ', $str);
-
-echo $new_str; // Output: This sentence has multiple spaces.
-
-?>
-
-
-
-
-
-
-
-<?php
-
+// Example 4: Replacing consonants with asterisks and storing result
 $str = "Hello! This is a test string 123.";
+$store = [];
+$result = preg_replace('/[^aeouiIAEOU]/', '*', $str); // Replaces all characters that are not vowels with an asterisk
+$store[] = $result;
+print_r($store); // Output: Array ( [0] => *e**o! *i* i* a *e* *i** *23. )
 
-// Remove non-alphanumeric characters
-$new_str = preg_replace('/[^a-zA-Z0-9\s]/', '', $str);
-
+// Example 5: Removing non-alphanumeric characters again
+$new_str = preg_replace('/[^a-zA-Z0-9\s]/', '', $str); // Same as Example 2
 echo $new_str; // Output: Hello This is a test string 123
 
-// Example 2: Replacing Multiple Spaces with Single Space
-
-
-$str = "This     sentence    has   multiple    spaces.";
-
-// Replace multiple spaces with a single space
-$new_str = preg_replace('/\s+/', ' ', $str);
-
-echo $new_str; // Output: This sentence has multiple spaces.
-
-
-
-$html = "<p>This is <b>bold</b> and <i>italic</i> text.</p>";
-
-// Remove HTML tags
-$text_only = preg_replace('/<[^>]*>/', '', $html);
-
-echo $text_only; // Output: This is bold and italic text.
-
-
-// Example 4: Removing Extra Whitespace from Beginning and End of String
-
-
+// Example 6: Removing extra whitespace from beginning and end of string
 $str = "   Trim this string   ";
-
-// Remove extra whitespace from beginning and end
-$new_str = preg_replace('/^\s+|\s+$/', '', $str);
-
+$new_str = preg_replace('/^\s+|\s+$/', '', $str); // Removes leading and trailing whitespace
 echo $new_str; // Output: Trim this string
 
-
-// Example 5: Replacing URLs with Anchor Tags
-
-
+// Example 7: Replacing URLs with anchor tags
 $str = "Visit our website at https://example.com and learn more.";
-
-// Replace URLs with anchor tags
-$new_str = preg_replace('/\bhttps?:\/\/\S+/', '<a href="$0">$0</a>', $str);
-
+$new_str = preg_replace('/\bhttps?:\/\/\S+/', '<a href="$0">$0</a>', $str); // Wraps URLs in anchor tags
 echo $new_str; // Output: Visit our website at <a href="https://example.com">https://example.com</a> and learn more.
 
-
-// <!-- Example 6: Masking Credit Card Numbers -->
-
-
+// Example 8: Masking credit card numbers
 $str = "Your credit card number is 1234-5678-9012-3456.";
-
-// Mask credit card numbers
-$new_str = preg_replace('/\b(\d{4}-){3}\d{4}\b/', '****-****-****-****', $str);
-
+$new_str = preg_replace('/\b(\d{4}-){3}\d{4}\b/', '****-****-****-****', $str); // Masks credit card numbers
 echo $new_str; // Output: Your credit card number is ****-****-****-****.
 
-
-//Example 7: Extracting Numbers from String
-
-
+// Example 9: Extracting numbers from a string
 $str = "The price of the product is $99.99.";
-
-// Extract numbers
-preg_match_all('/\d+(\.\d+)?/', $str, $matches);
+preg_match_all('/\d+(\.\d+)?/', $str, $matches); // Matches all numbers (integer and floating-point)
 $numbers = implode(', ', $matches[0]);
-
 echo "Numbers found: " . $numbers; // Output: Numbers found: 99.99
 
-//Example 8: Converting Markdown-style Links to HTML
-
+// Example 10: Converting Markdown-style links to HTML
 $str = "Read [PHP Manual](https://www.php.net/manual/en/) for more information.";
-
-// Convert Markdown links to HTML
-$new_str = preg_replace('/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/', '<a href="$2">$1</a>', $str);
-
+$new_str = preg_replace('/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/', '<a href="$2">$1</a>', $str); // Converts Markdown links to HTML
 echo $new_str; // Output: Read <a href="https://www.php.net/manual/en/">PHP Manual</a> for more information.
 
-
-// Example 9: Removing Leading Zeros from IP Addresses
-
-
+// Example 11: Removing leading zeros from IP addresses
 $ip = "192.168.001.001";
-
-// Remove leading zeros from IP addresses
-$new_ip = preg_replace('/(\b\d{1,3})\.0+(\d{1,3}\b)/', '$1.$2', $ip);
-
+$new_ip = preg_replace('/(\b\d{1,3})\.0+(\d{1,3}\b)/', '$1.$2', $ip); // Removes leading zeros from IP address octets
 echo $new_ip; // Output: 192.168.1.1
 
-
-//Example 10: Uppercasing First Letters of Words
-
-
+// Example 12: Uppercasing the first letters of words
 $str = "capitalize each word in this sentence.";
-
-// Uppercase first letters of words
 $new_str = preg_replace_callback('/\b\w/', function($match) {
     return strtoupper($match[0]);
-}, $str);
-
+}, $str); // Uppercases the first letter of each word
 echo $new_str; // Output: Capitalize Each Word In This Sentence.
-
-?>
-
-
-
-
-
 
 ?>

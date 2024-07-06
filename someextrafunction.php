@@ -10,7 +10,6 @@ $c = array_combine($fname, $age);
 // Printing the resulting associative array
 print_r($c);
 
-
 // Array
 // (
 //     [Peter] => 35

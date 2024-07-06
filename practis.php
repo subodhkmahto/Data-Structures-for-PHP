@@ -22,6 +22,51 @@ $array3 = [
 // Find keys in $array1 that are not present in $array2 and $array3
 $result = array_diff_key($array1, $array2, $array3);
 
+
+
+$arr1 = [1, 2, 3, 4, 5];
+$arr2 = [2, 3, 6, 7];
+$arr3 = [4, 5, 8, 9];
+
+$merged = array_merge($arr1, $arr2, $arr3);
+
+print_r($merged);
+echo 'Hello';
+print_r(array_count_values($merged));
+
+// Array
+// (
+//     [1] => 1
+//     [2] => 2
+//     [3] => 2
+//     [4] => 2
+//     [5] => 2
+//     [6] => 1
+//     [7] => 1
+//     [8] => 1
+//     [9] => 1
+// )
+
+
+// Array
+// (
+//     [0] => 1
+//     [1] => 2
+//     [2] => 3
+//     [3] => 4
+//     [4] => 5
+//     [5] => 2
+//     [6] => 3
+//     [7] => 6
+//     [8] => 7
+//     [9] => 4
+//     [10] => 5
+//     [11] => 8
+//     [12] => 9
+// )
+
+
+
 print_r($result);
 
 
@@ -93,5 +138,24 @@ print_r($result);
 // (
 //     [0] => apple
 // )
+
+
+
+$arr1 = ["a" => 1, "b" => 2];
+$arr2 = ["b" => 3, "c" => 4];
+
+$merged = array_merge($arr1, $arr2);
+
+print_r($merged);
+
+
+// Array
+// (
+//     [a] => 1
+//     [b] => 3
+//     [c] => 4
+// )
+
+
 
 ?>

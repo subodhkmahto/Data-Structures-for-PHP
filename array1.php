@@ -144,6 +144,8 @@ $numbers = [1, 2, 3, 4, 5];
 
 // Apply the callback function to each element of the array
 $squaredNumbers = array_map("square", $numbers);
+
+array_map('even',$arr);
 print_r($squaredNumbers);
 // Output: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 [4] => 25 )
 ?>
@@ -183,6 +185,7 @@ $numbers = [1, 2, 3, 4, 5];
 
 // Reduce the array to a single value using the callback function
 $total = array_reduce($numbers, "sum", 0);
+
 echo $total;
 // Output: 15
 ?>

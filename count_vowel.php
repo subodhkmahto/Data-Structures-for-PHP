@@ -55,6 +55,7 @@ $reversed = strrev("Hello World");
 if (preg_match("/world/i", "Hello World")) {
     echo "Match found!";
 }
+
 // preg_replace: Performs a regular expression search and replace.
 
 
@@ -136,6 +137,7 @@ $str = "The rain in Spain stays mainly in the plain.";
 $pattern = "/\bt\w*/i"; // \b asserts a word boundary, \w* matches zero or more word characters, i for case-insensitive
 // Array to hold matches
 $matches = [];
+
 
 // Perform the regular expression match
 preg_match_all($pattern, $str, $matches);
@@ -349,6 +351,8 @@ $str = "hello123 world";
 
 // The pattern to search for
 $pattern = '/hello\d+/';
+'/hello\d+';
+'/hello\d+';
 
 // Perform the regular expression match
 if (preg_match($pattern, $str, $matches)) {

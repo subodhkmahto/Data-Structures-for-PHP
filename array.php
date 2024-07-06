@@ -109,6 +109,32 @@ $squaredNumbers = array_map("square", $numbers);
 print_r($squaredNumbers);
 // Output: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 [4] => 25 )
 
+
+$keys_value = ['a', 'b', 'c', 'd', 'f'];
+
+function mapping($n) {
+    global $keys_value;
+    static $i = 0; // Static variable to keep track of the index
+    $key = $keys_value[$i];
+    $i++; // Increment the index for the next call
+    return [$key => $n * $n];
+}
+
+$numbers = [1, 2, 3, 4, 5];
+
+// Use array_map to apply the mapping function to the numbers
+$squaredNumbersWithKeys = array_map('mapping', $numbers);
+
+// Flatten the result
+$result = [];
+foreach ($squaredNumbersWithKeys as $item) {
+    $result[key($item)] = current($item);
+}
+
+print_r($result);
+
+
+
 #array_filter()
 // Description: Filters elements of an array using a callback function.
 
