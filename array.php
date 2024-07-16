@@ -91,7 +91,9 @@ print_r($result);
 $arr1 = array("a" => 1, "b" => 2, "c" => 3);
 $arr2 = array("b" => 2, "d" => 4);
 $result = array_intersect($arr1, $arr2);
+$result1 = array_intersect_key($arr1, $arr2);
 print_r($result);
+print_r($result1);
 // Output: Array ( [b] => 2 )
 
 

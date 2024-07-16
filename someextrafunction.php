@@ -7,6 +7,8 @@ $age = array("35", "37", "43");
 // Combining arrays to create an associative array
 $c = array_combine($fname, $age);
 
+
+
 // Printing the resulting associative array
 print_r($c);
 
@@ -27,7 +29,9 @@ print_r($c);
 
 
 // Define a string
-$string = "apple,banana,cherry";
+
+$string ="apple,banana,cherry";
+
 
 // Split the string by comma into an array
 $array = explode(",", $string);

@@ -294,6 +294,7 @@ $str = "Presenting preferences preface, prelude, and preview for preprocessing."
 // The pattern to search for words starting with 'pre'
 $pattern = '/\bpre\w*\b/i';
 
+
 // Array to hold matches
 $matches = [];
 
@@ -349,10 +350,9 @@ In PHP, regular expressions are typically
 // The string to search
 $str = "hello123 world";
 
+
 // The pattern to search for
 $pattern = '/hello\d+/';
-'/hello\d+';
-'/hello\d+';
 
 // Perform the regular expression match
 if (preg_match($pattern, $str, $matches)) {

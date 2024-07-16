@@ -11,7 +11,12 @@ print_r($array);
 
 // Sort in descending order
 rsort($array);
+rsort($arr);
+
+
 print_r($array);
+
+
 
 
 ?>

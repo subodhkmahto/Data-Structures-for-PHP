@@ -31,6 +31,7 @@ if (in_array("banana", $arr)) {
 } else {
     echo "Value does not exist.";
 }
+
 ?>
 <!-- array_search()
 Description: Searches the array for a given value and returns the first corresponding key if successful.

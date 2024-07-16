@@ -39,6 +39,8 @@ foreach ($squaredNumbersWithKeys as $key=> $item) {
 }
 
 print_r($squaredNumbersWithKeys);
-
+$arr=['a'=>2,'e'=>3,'d'=>3,'e'=>4,'f'=>9];
+$arrs=['e'=>4,'f'=>5,'e'=>5,'e'=>6];
+print_r(array_intersect_key($arr,$arrs));
 
 ?>
