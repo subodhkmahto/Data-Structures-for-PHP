@@ -23,10 +23,8 @@ $result = array_diff_key($array1, $array2, $array3);
 
 print_r($result);
 
-
-
-
 $arr = array("a" => 1, "b" => 2, "c" => 3);
+
 $out=[];
 foreach ($arr as $key => $data) {
     $out[] = ['id' => $key, 'name' => $data];
@@ -243,5 +241,64 @@ $filledArray = array_fill(0, 5, "apple");
 print_r($filledArray);
 // Output: Array ( [0] => apple [1] => apple [2] => apple [3] => apple [4] => apple )
 // These functions, along with the ones you mentioned, provide a comprehensive toolkit for manipulating arrays in PHP, making it easier to handle complex data structures and perform various operations.
+
+
+
+
+// Original array with values
+$formate_values = [
+    "MDU",
+    "SAMARTH",
+    "PRG",
+    "ID",
+    "2023",
+    "oucode",
+    "000001",
+    "MDU"
+];
+
+// Values to remove
+$values_to_remove = ["SAMARTH", "PRG", "ID"];
+
+// Filter out the values to remove
+$filtered_values = array_filter($formate_values, function($value) use ($values_to_remove) {
+    return !in_array($value, $values_to_remove);
+});
+
+// Reindex the array (optional)
+$filtered_values = array_values($filtered_values);
+
+// Display the filtered array
+print_r($filtered_values);
+
+
+
+// Original array
+$array = [
+    [ "reset_series_on_every_programme", "1" ],
+    [ "year", "FOUR DIGIT YEAR FORMAT (YYYY)" ],
+    [ "OuCode", "oucode" ],
+    [ "length_of_series", "6" ],
+    [ "prefix", "INSTITUTE_CODE_PREFIX" ],
+    [ "suffix_custom_code", "" ],
+    [ "OuCode", "oucode" ], // Index 6 that we want to remove
+    [ "separator", "|" ],
+    [ "reset_series_on_every_programme", "1" ],
+    [ "isset_programme_specific_codes", "null" ]
+];
+
+// Remove the element at index 6
+unset($array[6]);
+
+// Reindex the array if needed (optional, but useful if you need sequential indices)
+$array = array_values($array);
+
+// Output the modified array
+var_dump($array);
+
+var_dump(array_splice($dublicateNumericArray, 6, 1));die();
+                       unset($dublicateNumericArray[6]);
+
+
 
 ?>

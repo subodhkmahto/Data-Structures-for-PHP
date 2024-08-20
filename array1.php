@@ -1,3 +1,27 @@
+<?php
+$values = [1.5, 2.5, 3, 4.5, 5];
+$total = array_sum($values);
+
+echo "The sum of the values is: " . $total; // Outputs: The sum of the values is: 16.5
+
+echo date("Y-m-d H:i:s");
+// Outputs: 2024-08-16 14:00:00 (example)
+echo max(1, 5, 9, 3);  // Outputs: 9
+
+$file = fopen("example.txt", "w");
+fwrite($file, "Hello, World!");
+fclose($file);
+
+$content = file_get_contents("example.txt");
+
+
+$file = fopen("example.txt", "r");
+
+
+?>
+
+
+
 <!-- array_key_exists()
 Description: Checks if a specified key exists in an array.
 
@@ -31,6 +55,7 @@ if (in_array("banana", $arr)) {
 } else {
     echo "Value does not exist.";
 }
+
 
 ?>
 <!-- array_search()
