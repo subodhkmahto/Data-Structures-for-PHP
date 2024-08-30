@@ -183,8 +183,63 @@ print_r($slice);
 
 $numbers = [1, 2, 3, 4, 5];
 array_splice($numbers, 2, 2, [10, 11]);
+
+
+// $numbers = [1, 2, 3, 4, 5]
+// Indexes: [0, 1, 2, 3, 4]
+// array_splice($numbers, 2, 2, [10, 11]):
+
+// 2 (Offset): Start at index 2, which is the element 3.
+// 2 (Length): Remove 2 elements starting from index 2. This removes 3 and 4.
+// [10, 11] (Replacement): Insert 10 and 11 where the removed elements were.
+// Modified Array:
+
+// After the operation, the array becomes [1, 2, 10, 11, 5].
+// Final Output:
+// php
+// Copy code
+// Array
+// (
+//     [0] => 1
+//     [1] => 2
+//     [2] => 10
+//     [3] => 11
+//     [4] => 5
+// )
+
 print_r($numbers);
 // Output: Array ( [0] => 1 [1] => 2 [2] => 10 [3] => 11 [4] => 5 )
+
+
+$fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+array_splice($fruits, 1, 2, ["kiwi", "mango"]);
+
+print_r($fruits);
+// Array
+// (
+//     [0] => apple
+//     [1] => kiwi
+//     [2] => mango
+//     [3] => date
+//     [4] => elderberry
+// )
+
+
+$fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+array_splice($fruits, 2, 0, ["fig", "grape"]);
+
+print_r($fruits);
+
+// Array
+// (
+//     [0] => apple
+//     [1] => banana
+//     [2] => fig
+//     [3] => grape
+//     [4] => cherry
+//     [5] => date
+//     [6] => elderberry
+// )
 
 // Additional Useful Array Functions
 #array_walk()
@@ -297,8 +352,6 @@ $array = array_values($array);
 var_dump($array);
 
 var_dump(array_splice($dublicateNumericArray, 6, 1));die();
-                       unset($dublicateNumericArray[6]);
-
-
+unset($dublicateNumericArray[6]);
 
 ?>
