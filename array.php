@@ -1,5 +1,44 @@
 <?php
 
+// Define the callback function to check if a number is even
+$isEven = function($a, $b, $c) {
+    return [
+        'array1_is_even' => $a % 2 === 0,
+        'array2_is_even' => $b % 2 === 0,
+        'array3_is_even' => $c % 2 === 0
+    ];
+};
+
+// Define three arrays
+$array1 = [1, 2, 3, 4];  // First array
+$array2 = [10, 15, 20, 25]; // Second array
+$array3 = [5, 6, 7, 8];  // Third array
+
+// Use array_map to apply $isEven on corresponding elements of $array1, $array2, and $array3
+$result = array_map($isEven, $array1, $array2, $array3);
+
+// Print the result
+print_r($result);
+
+
+
+// Define the callback function that checks if all elements are even
+$isEven = function($a, $b, $c) {
+    return [$a % 2 === 0, $b % 2 === 0, $c % 2 === 0];
+};
+
+// Define three arrays
+$array1 = [1, 2, 3, 4];     // Array 1
+$array2 = [10, 15, 20, 25]; // Array 2
+$array3 = [5, 6, 7, 8];     // Array 3
+
+// Use array_map to apply $isEven to corresponding elements of $array1, $array2, and $array3
+$result = array_map($isEven, $array1, $array2, $array3);
+
+// Print the result
+print_r($result);
+
+
 $array1 = [
     'a' => 'apple',
     'b' => 'banana',
@@ -148,6 +187,12 @@ $numbers = [1, 2, 3, 4, 5, 6];
 $evenNumbers = array_filter($numbers, "isEven");
 print_r($evenNumbers);
 // Output: Array ( [1] => 2 [3] => 4 [5] => 6 )
+
+array_filter($numbers,function($value){
+    return $value%2==0;
+});
+
+
 
 #array_reduce()
 // Description: Iteratively reduces the array to a single value using a callback function.

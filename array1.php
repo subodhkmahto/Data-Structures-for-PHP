@@ -3,7 +3,7 @@ $values = [1.5, 2.5, 3, 4.5, 5];
 $total = array_sum($values);
 
 echo "The sum of the values is: " . $total; // Outputs: The sum of the values is: 16.5
-
+ 
 echo date("Y-m-d H:i:s");
 // Outputs: 2024-08-16 14:00:00 (example)
 echo max(1, 5, 9, 3);  // Outputs: 9
@@ -314,6 +314,7 @@ Syntax: array_fill(int $start_index, int $count, mixed $value): array -->
 <?php
 // Fill an array with the value 'apple' starting from index 0 and repeating 5 times
 $filledArray = array_fill(0, 5, "apple");
+
 print_r($filledArray);
 // Output: Array ( [0] => apple [1] => apple [2] => apple [3] => apple [4] => apple )
 ?>
